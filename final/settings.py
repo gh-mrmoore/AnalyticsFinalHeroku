@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-from .private import db_info, key_secret
+# from .private import db_info, key_secret
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -76,7 +76,16 @@ WSGI_APPLICATION = 'final.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = db_info
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'x', 
+        'USER': 'x', 
+        'PASSWORD': 'x', 
+        'HOST': 'x', 
+        'PORT': '5432', 
+    }
+}
 
 
 # Password validation
