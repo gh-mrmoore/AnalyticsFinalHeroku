@@ -124,6 +124,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),   # changed from staticfiles to static to enable static files on 'final'
 )
 
+DISABLE_COLLECTSTATIC = 0
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
