@@ -1,0 +1,30 @@
+{% extends "dash/base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-4">
+    <!-- Sidebar navigation for "/home" area -->
+    <h2>Project Home</h2>
+    <ul class="nav nav-pills flex-column">
+    <li class="nav-item">
+    <a class="nav-link" href="/home/purpose">Purpose</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="/home/team">Team</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="/home/communications">Communication Protocols</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/gh-mrmoore/AnalyticsFinalProject" target="_new">Repository <i class="fas fa-external-link-alt"></i></a>
+    </li>
+    </ul>
+  </div>
+  <div class="col-sm-8">
+    <!-- Content area for "/home" area -->
+    {% block info %}
+    {% endblock %}
+  </div>
+</div>
+
+{% endblock %}
