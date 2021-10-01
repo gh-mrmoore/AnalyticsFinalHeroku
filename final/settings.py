@@ -118,7 +118,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')    # for static file collection
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # for static file collection
 # extra locations to search for static files - from Heroku
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),   # changed from staticfiles to static to enable static files on 'final'
