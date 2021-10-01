@@ -22,6 +22,9 @@ def team(request):
 def models(request):
     return render(request, 'models/models_main.html')
 
+def model01(request):
+    return render(request, 'models/model_01_exploits.html')
+
 # views for the data area
 def data(request):
     return render(request, 'data/data_main.html')
