@@ -1,0 +1,21 @@
+{% extends "viz/viz__base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-4">
+    <!-- Sidebar navigation for "/home" area -->
+    <h2>Visualizations</h2>
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item"><a class="nav-link" href="/viz/home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="/viz/map">World Map</a></li>
+      <li class="nav-item"><a class="nav-link" href="/viz/gender">Victims by Gender</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-8">
+    <!-- Content area for "/home" area -->
+    {% block info %}
+    {% endblock %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "datasets/datasets_base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-4">
+    <!-- Sidebar navigation for "/home" area -->
+    <h2>Models Home</h2>
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item"><a class="nav-link" href="/datasets">Overview</a></li>
+      <li class="nav-item"><a class="nav-link" href="/models/model01">Forced Labor Type Modeling</a></li>
+      <li class="nav-item"><a class="nav-link" href="/models/model02">Economic/Demographic Modeling</a></li>
+      <li class="nav-item"><a class="nav-link" href="/datasets/model03">Regressions</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-8">
+    <!-- Content area for "/home" area -->
+    {% block info %}
+    {% endblock %}
+  </div>
+</div>
+
+{% endblock %}

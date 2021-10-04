@@ -1,0 +1,86 @@
+{% extends "mlmodels/mlmodel_template.html" %}
+
+{% block info %}
+    <h2>Machine Learning Models</h2>
+    <hr />
+    <h3>Ask:</h3>
+    <p>Does the victim's age, gender, relationship to the person that 
+        recruited them and citizenship predict the type of exploitation?</p>
+    <p>Polaris-reported human trafficking appears to fall in to one of five major 
+        types of exploitation: sexual, forced labor, forced marriage, slavery and other/multiple exploits.</p>
+    <hr />
+    <h3>Data ETL</h3>
+    <p>Categorical data was converted to numerical data using multiple loops and <code>.replace</code> cells within a Jupyter Notebook.
+        This transformation was necessary to meet the requirements of our machine learning model. Null values were dropped as we could 
+        not presume to know things like country of origin or reasonably infer things like gender based on the information available.</p>
+    <h3>Model Choice</h3>
+    <p>Initial modeling attempts were made using both deep learning neural networks as well as unsupervised learning models to predict a 
+        categorical outcome. When those efforts resulted in less than desirable predictive models, consultations with our instructor led 
+        to the creation of a supervised, multi-class logistic regression model.
+    </p>
+    <h4>Model Performance</h4>
+    <p>In predicting the type of exploitation, our chosen model performed well. Using SciKit-Learn, an accuracy score of .969 was calculated. Further 
+        examination using <code>classification_report</code> yielded the following:
+    </p>
+    <table>
+        <tr>
+            <th></th>
+            <th>precision</th>
+            <th>recall</th>
+            <th>f1-score</th>
+            <th>support</th>
+        </tr>
+        <tr>
+            <td>1 (Sexual Exploitation)</td>
+            <td>0.99</td>
+            <td>0.98</td>
+            <td>0.99</td>
+            <td>934</td>
+        </tr>
+        <tr>
+            <td>2 (Forced Labor)</td>
+            <td>0.93</td>
+            <td>0.98</td>
+            <td>0.96</td>
+            <td>527</td>
+        </tr>
+        <tr>
+            <td>3 (Other)</td>
+            <td>1.00</td>
+            <td>0.57</td>
+            <td>0.73</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>5 (Forced Marriage)</td>
+            <td>1.00</td>
+            <td>0.16</td>
+            <td>0.27</td>
+            <td>19</td>
+        </tr>
+        <tr>
+            <td>accuracy</td>
+            <td></td>
+            <td></td>
+            <td>0.97</td>
+            <td>1487</td>
+        </tr>
+        <tr>
+            <td>macro avg</td>
+            <td>0.98</td>
+            <td>0.67</td>
+            <td>0.74</td>
+            <td>1487</td>
+        </tr>
+        <tr>
+            <td>weighted avg</td>
+            <td>0.97</td>
+            <td>0.97</td>
+            <td>0.97</td>
+            <td>1487</td>
+        </tr>
+    </table>
+    <p><a href="https://drive.google.com/file/d/1rLB7ZLEsOK30xxNmDHRMnEyF-0BPW20f/view?usp=sharing" target="_new">Colab Notebook <i class="fas fa-external-link-alt"></i></a></p>
+    
+
+{% endblock %}
