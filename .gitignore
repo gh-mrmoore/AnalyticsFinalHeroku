@@ -1,6 +1,7 @@
 # My additions
 .vscode/
 private.py
+private.js
 
 # Virtual environment
 ku5/

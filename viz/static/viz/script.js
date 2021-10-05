@@ -4,7 +4,8 @@ var map = L.map('map',{
   zoom: 4,
   // layers: [streetmap,darkmap]
 });
-var API_KEY = 'pk.eyJ1IjoiZnJhbmNpc2NvMTMtMzAiLCJhIjoiY2tyYmFzcG5lNHJqbzJ2dDl3Z3duZmJiYyJ9.iecr3feoK8Whj4eZPueG8w';
+
+// deleting API_KEY variable here for push to GitHub
 
 var streetmap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
