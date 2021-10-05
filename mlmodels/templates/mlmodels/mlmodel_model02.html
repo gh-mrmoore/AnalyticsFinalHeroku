@@ -4,13 +4,155 @@
     <h2>Machine Learning Models</h2>
     <hr />
     <h3>Ask:</h3>
-    <p>Does the victim's age, gender, relationship to the person that recruited them and citizenship predict the type of exploitation?</p>
+    <p>If the victim of human trafficking is being forced to perform labor, 
+        can we predict the type of labor given the inputs available from our dataset?</p>
     <p>Polaris-reported human trafficking appears to fall in to one of five major types of exploitation: sexual, forced labor, forced marriage, slavery and other/multiple exploits.</p>
     <hr />
     <h3>Data ETL</h3>
-    <p>Placeholder text</p>
+    <p>ETL for this model is largely the same as in the first model generated, however, Labor Type is categorized in to one of 8 possible values:</p>
+    <table>
+        <tr>
+            <th>Category Text</th>
+            <th>Category ID</th>
+        </tr>
+        <tr>
+            <td>Domestic Work</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Other</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Unknown</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Agriculture</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Manufacturing</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Construction</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Begging</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Aquafarming</td>
+            <td>8</td>
+        </tr>
+    </table>
+    <p>Only those features that were being examined were kept, so our independent X value set consisted of the features:</p>
+    <ul>
+        <li>"Gender"</li>
+        <li>"Citizenship"</li>
+        <li>"Control Category"</li>
+        <li>"Recruiter Category"</li>
+        <li>"Age Categories"</li>
+    </ul>
     <h3>Model Choice</h3>
-    <p>Initially, both unsupervised and neural-network systems were chosen. Following p</p>
+    <p>Initially, both unsupervised and neural-network systems were chosen. Following poor predictive performance, consultations 
+        with our instructor led us to a multi-class logistic regression. The model performed reasonably well, however, multiple, 
+        less than successful, attempts were made to improve performance.
+    </p>
+    <h4>Model Performance</h4>
+    <p>Using SciKit-Learn, an accuracy score of 0.695 was calculated. This is likely due in large part to data loss. Our cleaned data 
+        started with approximately 14,000 records, however, by the time we filtered for forced labor and removed any remaining null values, 
+        we were left with approximately 2,100 rows.
+    </p>
+    <p>Further examination using <code>classification_report</code> yielded the following:</p>
+    <table>
+        <tr>
+            <th></th>
+            <th>precision</th>
+            <th>recall</th>
+            <th>f1-score</th>
+            <th>support</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0.94</td>
+            <td>0.56</td>
+            <td>0.70</td>
+            <td>57</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>0.00</td>
+            <td>0.00</td>
+            <td>0.00</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>0.61</td>
+            <td>0.80</td>
+            <td>0.69</td>
+            <td>141</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>0.00</td>
+            <td>0.00</td>
+            <td>0.00</td>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>0.70</td>
+            <td>0.51</td>
+            <td>0.59</td>
+            <td>76</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>0.76</td>
+            <td>0.79</td>
+            <td>0.77</td>
+            <td>203</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>0.34</td>
+            <td>0.43</td>
+            <td>0.38</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>accuracy</td>
+            <td></td>
+            <td></td>
+            <td>0.70</td>
+            <td>535</td>
+        </tr>
+        <tr>
+            <td>macro avg</td>
+            <td>0.54</td>
+            <td>0.51</td>
+            <td>0.52</td>
+            <td>535</td>
+        </tr>
+        <tr>
+            <td>weighted avg</td>
+            <td>0.69</td>
+            <td>0.70</td>
+            <td>0.68</td>
+            <td>535</td>
+        </tr>
+    </table>
     <p><a href="https://drive.google.com/file/d/1X2B-okwmxh3LJL2PDrNbTskPgpNN4eFd/view?usp=sharing" target="_new">Colab Notebook <i class="fas fa-external-link-alt"></i></a></p>
     
 
